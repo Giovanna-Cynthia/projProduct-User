@@ -49,12 +49,12 @@ filePath = path.join(__dirname, "..", "database", __filename);
 
         static async getUserById(id) {
             const users = await this.getUsers();
-            return users.findIndex(p => p.id === parseInt(id));
+            return users.findIndex(user => user.id === parseInt(id));
         }
 
         static async updateUser(id, user) {
             const users = await this.getUsers();
-            const index = users.findIndex(p => p.id === parseInt(id));
+            const index = users.findIndex(user => user.id === parseInt(id));
             if (index === -1) {
                 return null;
             }
@@ -65,7 +65,7 @@ filePath = path.join(__dirname, "..", "database", __filename);
 
         static async deleteUser(id) {
             const users = await this.getUsers();
-            const index = users.findIndex(p => p.id === parseInt(id));
+            const index = users.findIndex(user => user.id === parseInt(id));
             if(index === -1) {
                 return null;
             } else{
